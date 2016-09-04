@@ -98,16 +98,19 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             placeMark = placeArray?[0]
             
             // Address dictionary
-//            print(placeMark.addressDictionary)
+         ///   print(placeMark.addressDictionary)
             
             // City
             if let _city = placeMark.addressDictionary?["City"] as? String{
                 city = _city
+            }
+            
+            if let _country = placeMark.addressDictionary?["Country"] as? String {
+                country = _country.capitalizedString
                 
                 //Start downlaod the data as screen loads
                 self.service = DataServices()
                 self.service.event.listenTo("downloadComplete", action: self.downloadCompleted);
-                
             }
         }
         
@@ -123,6 +126,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         weatherType.text = report.weather
         minTemp.text = "\(report.minTemp.cleanValue)"
         cityCountry.text = "\(report.cityName),\(report.country)"
+        normalIconView.image = UIImage(named: report.iconCode)
         spinner.dismiss()
     }
     

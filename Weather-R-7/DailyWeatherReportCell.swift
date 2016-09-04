@@ -15,6 +15,7 @@ class DailyWeatherReportCell: UITableViewCell {
     @IBOutlet weak var tableWeatherType: UILabel!
     @IBOutlet weak var tableMax: UILabel!
     @IBOutlet weak var tableMin: UILabel!
+    @IBOutlet weak var weatherIcon :UIImageView!
     
     
     override func awakeFromNib() {
@@ -34,7 +35,7 @@ class DailyWeatherReportCell: UITableViewCell {
         cell.tableMin.text = "\(report.minTemp.cleanValue)"
         cell.tableWeatherType.text = "\(report.weather)"
         cell.tableDay.text = report.date
-        
+        cell.weatherIcon.image = UIImage(named: report.iconCode)
     }
 
 }

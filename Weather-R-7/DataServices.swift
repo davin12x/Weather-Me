@@ -17,7 +17,7 @@ class DataServices {
     private var _weather:String!
     private var _date :String!
     private var _iconCode:String!
-    private var index = 0
+    private var index = 1
     private var todayWeather = true
     var dailyReport = [DailyWeatherReport]()
     let event = EventManager();
@@ -76,7 +76,7 @@ class DataServices {
                     
                     self._date = "0"
                     self._cityName = city
-                    self._country = "CA"
+                    self._country = country
                     let report = DailyWeatherReport(city: self._cityName,country: self._country,currentTemp: self._currentTemp,maxTemp: self._maxTemp,minTemp: self._minTemp,weather:
                         self._weather,date: self._date,iconCode: self._iconCode)
                     

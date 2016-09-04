@@ -16,5 +16,6 @@ typealias DownloadComplete = () -> ()
 var lat :Double!
 var lon:Double!
 var city:String!
+var country :String!
 var CORRDINATES = "forecast?lat=\(lat)&lon=\(lon)";
 var CITYURL = "find?q=\(city)"

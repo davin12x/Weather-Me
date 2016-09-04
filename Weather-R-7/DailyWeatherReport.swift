@@ -54,7 +54,51 @@ class DailyWeatherReport {
         return _date
     }
     var iconCode:String {
-        return _iconCode
+        return getIcon(_iconCode)
+    }
+    
+    func getIcon(iconCode:String)->String {
+        let lastCharacter = iconCode.characters.last!
+        let ICON :String!
+        switch iconCode {
+        case "01\(lastCharacter)":
+            //sunny
+            ICON =  "Sunny"
+            break;
+        case "02\(lastCharacter)":
+             ICON =  "PartiallyCloudy"
+            break;
+        case "03\(lastCharacter)":
+            ICON =  "Cloudy"
+            break;
+        case "04\(lastCharacter)":
+             ICON =  "Cloudy"
+            break;
+        case "09\(lastCharacter)":
+             ICON =  "Rainy"
+            break;
+        case "10\(lastCharacter)":
+             ICON =  "Rainy"
+            break;
+        case "11\(lastCharacter)":
+             ICON = "Lightning"
+            break;
+        case "13\(lastCharacter)":
+             ICON =  "Snow"
+            break;
+        case "50\(lastCharacter)":
+             ICON =  "PartiallyCloudy"
+            break;
+        case"01\(lastCharacter)":
+            ICON =  "moon"
+            break;
+        case "02\(lastCharacter)":
+             ICON =  "PartiallyCloudyCopy"
+            break;
+        default:
+            ICON =  "PartiallyCloudyCopy"
+        }
+        return ICON
     }
     
 }
